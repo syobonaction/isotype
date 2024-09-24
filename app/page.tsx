@@ -1,5 +1,7 @@
 'use client'
 
+import Link from "next/link"
+
 export default function Home() {
   return (  
     <div className="p-16 grid grid-cols-2">
@@ -16,7 +18,14 @@ export default function Home() {
 	around building the future that is both necessary for human survival and human flourishing. We reject the 
 	pessimism of the liberal project and put forward a practical, scientific and justifiably optimistic 
 	alternative to shaping the future of human society.</p>
-	<p>Join us.</p>
+	<Link href="/login" className="transition-colors hover:text-amber-100">
+	  <span className="transition-all pr-4 hover:pr-8">
+	    Join us
+          </span>
+          <span className="transition-all hover:pl-4">
+	    →
+	  </span>
+	</Link>
       </div>
     </div>
   )
