@@ -2,15 +2,16 @@
 
 import { signIn } from "next-auth/react"
 import { Button } from "@nextui-org/react"
+import { ReactNode } from "react"
 
 interface SignInButtonProps {
   title: string,
-  icon: React.ReactNode,
+  children: ReactNode,
 }
 
 const SignInButton: React.FC<SignInButtonProps> = ({
   title,
-  icon,
+  children,
 }) => {
   const handleClick = () => {
     signIn(title)
@@ -21,7 +22,7 @@ const SignInButton: React.FC<SignInButtonProps> = ({
       onPress={handleClick}
       disableRipple={true}
       className="
-        w-2/3 
+        w-full
         flex 
         items-center
         font-semibold
@@ -41,7 +42,7 @@ const SignInButton: React.FC<SignInButtonProps> = ({
         hover:bg-neutral-200
       "  
     >
-      {icon}
+      {children}
       <span className="ml-4">
         Continue with {title}
       </span>
