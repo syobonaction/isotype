@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
-import Header from "./components/Header"
 import localFont from "next/font/local"
+import Navbar from "@/components/navbar"
+import { Providers } from "@/components/providers"
 import "./globals.css"
 
 const plexMono = localFont({
-  src: "./fonts/plex_mono/IBMPlexMono-Regular.ttf",
+  src: "../fonts/plex_mono/IBMPlexMono-Regular.ttf",
   variable: "--font-plex-mono",
   weight: "400",
 })
@@ -20,13 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${plexMono.className} antialiased`}
-      >
-        <Header />
-        {children}
-      </body>
-    </html>
+    <Providers>
+      <html lang="en">
+        <body
+          className={`${plexMono.className} antialiased`}
+        >
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </Providers>
   )
 }

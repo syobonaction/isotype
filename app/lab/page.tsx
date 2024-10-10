@@ -1,3 +1,5 @@
+'use client'
+
 const Lab = () => {
   return (
     <div></div>
