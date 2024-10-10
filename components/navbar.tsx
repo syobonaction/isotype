@@ -4,6 +4,7 @@ import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@
 import { signOut, useSession } from "next-auth/react"
 import Image from "next/image"
 import Link from "next/link"
+import { CgProfile } from "react-icons/cg"
 import { CiLogout } from "react-icons/ci"
 
 const Navbar = () => {
@@ -34,6 +35,13 @@ const Navbar = () => {
               variant="light"
               className="bg-black border-2 border-neutral-900 rounded-md"
             >
+              <DropdownItem 
+                key="profile" 
+                startContent={<CgProfile />}
+                href={`/user/${session.user?.name}`}
+              >
+                Profile
+              </DropdownItem>
               <DropdownItem 
                 key="signout" 
                 startContent={<CiLogout />}

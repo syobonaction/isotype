@@ -1,23 +1,19 @@
 'use client'
 
-import Image from "next/image"
-import github from "@/public/github.png"
-import google from "@/public/google.png"
 import { signIn } from "next-auth/react"
 import { Button } from "@nextui-org/react"
 
 interface SignInButtonProps {
-  variant: string
+  title: string,
+  icon: React.ReactNode,
 }
 
 const SignInButton: React.FC<SignInButtonProps> = ({
-  variant,
+  title,
+  icon,
 }) => {
-  const title = variant.charAt(0).toUpperCase() + variant.slice(1)
-  const {...src} = {github, google}
-
   const handleClick = () => {
-    signIn(variant)
+    signIn(title)
   }
 
   return (
@@ -25,7 +21,7 @@ const SignInButton: React.FC<SignInButtonProps> = ({
       onPress={handleClick}
       disableRipple={true}
       className="
-        w-full 
+        w-2/3 
         flex 
         items-center
         font-semibold
@@ -42,10 +38,10 @@ const SignInButton: React.FC<SignInButtonProps> = ({
         text-black 
         rounded-lg 
         focus:shadow-outline 
-        hover:bg-slate-200
+        hover:bg-neutral-200
       "  
     >
-      <Image src={src[variant as keyof typeof src]} alt={title + " Logo"} width={20} height={20} />
+      {icon}
       <span className="ml-4">
         Continue with {title}
       </span>
