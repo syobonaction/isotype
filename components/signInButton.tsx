@@ -5,8 +5,8 @@ import { Button } from "@nextui-org/react"
 import { ReactNode } from "react"
 
 interface SignInButtonProps {
-  title: string,
-  children: ReactNode,
+  title: string
+  children: ReactNode
 }
 
 const SignInButton: React.FC<SignInButtonProps> = ({

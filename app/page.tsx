@@ -4,8 +4,8 @@ import Link from "next/link"
 
 export default function Home() {
   return (  
-    <div className="p-16 grid grid-cols-2">
-      <div className="">
+    <div className="p-16 grid grid:cols-1 lg:grid-cols-2">
+      <div className="hidden lg:grid">
         Image
       </div>
       <div className="px-16 text-2xl">

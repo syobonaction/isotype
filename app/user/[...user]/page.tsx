@@ -1,13 +1,14 @@
 'use client'
 
-import { usePathname } from "next/navigation"
+import { useSession } from "next-auth/react"
 
 const Profile = () => {
-  const pathname = usePathname()
+  const { data: session } = useSession()
+  const firstName = session?.user?.name?.split(" ")[0]
 
   return (
-    <div>
-      <h1>Welcome back {pathname}!</h1>
+    <div className="p-16">
+      <h1 className="text-4xl">Welcome back {firstName}!</h1>
     </div>
   )
 }

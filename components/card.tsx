@@ -1,8 +1,8 @@
 'use client'
 
 interface CardProps {
-  title: string,
-  description: string,
+  title: string
+  description: string
 }
 
 const Card: React.FC<CardProps> = ({
